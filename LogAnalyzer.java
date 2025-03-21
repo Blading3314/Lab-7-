@@ -10,7 +10,11 @@ public class LogAnalyzer
     private int[] hourCounts;
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
-
+     
+    public void takeLogFileName(){
+        
+        
+    }
     /**
      * Create an object to analyze hourly web accesses.
      */
@@ -22,7 +26,29 @@ public class LogAnalyzer
         // Create the reader to obtain the data.
         reader = new LogfileReader();
     }
-
+     public int numberOfAccesses() //14.
+     { 
+    /** * Return the number of accesses recorded in the log file. */ 
+      int total = 0; 
+    for (int count : hourCounts){ 
+        total +=count;
+        
+       }  
+        return total; 
+    }
+   
+     /** * Print all the values in the marks array that are greater than mean.
+    * @param marks An array of mark values.
+      * @param mean The mean (average) mark. */
+      
+      public void test() { //11. 
+        int [] marks = {1,3,4,5}; 
+       for(int index = 0; index < marks.length; index++) {
+         if(marks[index] > 0) {
+         System.out.println(marks[index]);
+        }
+       }
+      }
     /**
      * Analyze the hourly access data from the log file.
      */
@@ -41,10 +67,13 @@ public class LogAnalyzer
      * call to analyzeHourlyData.
      */
     public void printHourlyCounts()
-    {
+    { 
+        //10. 
         System.out.println("Hr: Count");
-        for(int hour = 0; hour < hourCounts.length; hour++) {
+            int hour = 0; 
+            while (hour < hourCounts.length){ 
             System.out.println(hour + ": " + hourCounts[hour]);
+            hour++; 
         }
     }
     
@@ -56,3 +85,21 @@ public class LogAnalyzer
         reader.printData();
     }
 }
+/* Part 1: 
+ * 1. Busiest times of the day is hour 18.
+ * 2. private int [] person = {}; 
+ * 3. private boolean [] vacant = {}; 
+ * 5. 1 - The [] is before the int instead of being after it. 
+ *    2 - boolean [] occupied = new boolean[5000]; 
+ * 6. double[] readings = new double [60];
+ * String[] urls = new String = [90]; 
+ * TicketMachine[] machines = new TicketMachine = [5]; 
+ * 7. 20 Strings
+ * 8. It should be new double[50]; 
+ * 9. Its out of bonds of 24
+
+ * 13. for (int count : hourCounts){
+ *     total += count;     
+ }
+ 14. 
+ */
