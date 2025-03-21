@@ -26,6 +26,28 @@ public class LogAnalyzer
         // Create the reader to obtain the data.
         reader = new LogfileReader();
     }
+    public String busiestHour(){ //15 
+        int maxCount = 0;
+        int busiestHour = -1;
+        for (int i = 0; i < hourCounts.length; i++) {
+            if (hourCounts[i] > maxCount) {
+                maxCount = hourCounts[i];
+                busiestHour = i;
+            }
+        }
+        return busiestHour +" is the busiest hour"; 
+    }
+     public String quietestHour(){ //16
+        int lowCount = hourCounts[0];
+        int quietestHour = 0;
+        for (int i = 1; i < hourCounts.length; i++) {
+            if (hourCounts[i] < lowCount) {
+                lowCount = hourCounts[i];
+                quietestHour = i;
+            }
+        }
+        return quietestHour +" is the quietest hour"; 
+    }
      public int numberOfAccesses() //14.
      { 
     /** * Return the number of accesses recorded in the log file. */ 
