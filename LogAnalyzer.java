@@ -11,20 +11,16 @@ public class LogAnalyzer
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
      
-    public void takeLogFileName(){
-        
-        
-    }
     /**
      * Create an object to analyze hourly web accesses.
      */
-    public LogAnalyzer()
+    public LogAnalyzer(String filename) //12
     { 
         // Create the array object to hold the hourly
         // access counts.
         hourCounts = new int[24];
         // Create the reader to obtain the data.
-        reader = new LogfileReader();
+        reader = new LogfileReader(filename);
     }
     public String busiestHour(){ //15 
         int maxCount = 0;
